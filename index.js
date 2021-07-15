@@ -16,7 +16,7 @@ The function should:
 */
 
 function createMenuItem(name,price,category){
-    return {name:name, price:price, category}
+    return {name, price, category}
 }
 console.log(createMenuItem('pizza',12,'dinner'))
 
@@ -50,7 +50,13 @@ const burger = {
   price: 18, 
   category: "Lunch", 
   // my code here
- 
+  discount: function(customer) {
+    if(customer === "teacher"|| customer === "student" )
+    {return this.price - (this.price * 0.25)
+  }else if (customer === "public") {
+    return this.price -(this.price * 0.1)
+  }
+}
 }
 
 
@@ -129,10 +135,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(array) {
-  return `${array [array.length-1].name} gave the restaurant a ${array [array.length-1].rating}  star review, and their feedback was: ${array [array.length-1].feedback} `
+function getLastReview (array) {
+  return `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].
+    rating} star review, and their feedback was: ${array[array.length-1].feedback}`
 } 
-
+console.log("task 7 ", getLastReview(reviews))
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -151,8 +158,14 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array ,ratimg ) {
+    const myrate =[]
+  for(let i = 0; i<array.length; i++) {
+      if(array[i].ratimg >= rating && array[i].ratimg <= rating + 0.9 ) {
+        myrate.push(array[i])
+      }
+    }
+    return myrate;
   }
 
   
@@ -169,9 +182,11 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
-  }
+// function getLongReviews(array) {
+//     const RR = [];
+//     for (let i = 0; i < array.length; i++)
+//   if(array[i].feedback.spllit )
+//   }
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
